@@ -80,28 +80,355 @@
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Your table rows here (same as in your original HTML) -->
-                <!-- For brevity, I've included just a few rows in this example -->
+             <tbody>
                 <tr>
                     <td>STENTER-10</td>
-                    <td><input type="number" name="STENTER-10Day" value="0" class="day-input"></td>
-                    <td><input type="number" name="STENTER-10Night" value="0" class="night-input"></td>
-                    <td><input type="number" name="STENTER-10Total" value="0" class="total-input" readonly></td>
+                    <td><input type="number" name="STENTER-10Day" value="0"></td>
+                    <td><input type="number" name="STENTER-10Night" value="0"></td>
+                    <td><input type="number" name="STENTER-10Total" value="0" readonly></td>
                 </tr>
                 <tr>
                     <td>STENTER-20</td>
-                    <td><input type="number" name="STENTER-20Day" value="0" class="day-input"></td>
-                    <td><input type="number" name="STENTER-20Night" value="0" class="night-input"></td>
-                    <td><input type="number" name="STENTER-20Total" value="0" class="total-input" readonly></td>
+                    <td><input type="number" name="STENTER-20Day" value="0"></td>
+                    <td><input type="number" name="STENTER-20Night" value="0"></td>
+                    <td><input type="number" name="STENTER-20Total" value="0" readonly></td>
                 </tr>
                 <tr>
                     <td>STENTER-30</td>
-                    <td><input type="number" name="STENTER-30Day" value="0" class="day-input"></td>
-                    <td><input type="number" name="STENTER-30Night" value="0" class="night-input"></td>
-                    <td><input type="number" name="STENTER-30Total" value="0" class="total-input" readonly></td>
+                    <td><input type="number" name="STENTER-30Day" value="0"></td>
+                    <td><input type="number" name="STENTER-30Night" value="0"></td>
+                    <td><input type="number" name="STENTER-30Total" value="0" readonly></td>
                 </tr>
-                <!-- Add all your other machine rows here -->
+                <tr>
+                    <td>PRINTING(NM)</td>
+                    <td><input type="number" name="PRINTING(NM)Day" value="0"></td>
+                    <td><input type="number" name="PRINTING(NM)Night" value="0"></td>
+                    <td><input type="number" name="PRINTING(NM)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>ROTRAY (LAXMI)(-)</td>
+                    <td><input type="number" name="ROTRAY(LAXMI)(-)Day" value="0"></td>
+                    <td><input type="number" name="ROTRAY(LAXMI)(-)Night" value="0"></td>
+                    <td><input type="number" name="ROTRAY(LAXMI)(-)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DOUBLE PRINT</td>
+                    <td><input type="number" name="DOUBLEPRINTDay" value="0"></td>
+                    <td><input type="number" name="DOUBLEPRINTNight" value="0"></td>
+                    <td><input type="number" name="DOUBLEPRINTTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>PRINTING(UM)</td>
+                    <td><input type="number" name="PRINTING(UM)Day" value="0"></td>
+                    <td><input type="number" name="PRINTING(UM)Night" value="0"></td>
+                    <td><input type="number" name="PRINTING(UM)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>ROTRAY(NEW)</td>
+                    <td><input type="number" name="ROTRAY(NEW)Day" value="0"></td>
+                    <td><input type="number" name="ROTRAY(NEW)Night" value="0"></td>
+                    <td><input type="number" name="ROTRAY(NEW)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DIGITAL REGGIANI</td>
+                    <td><input type="number" name="DIGITALREGGIANIDay" value="0"></td>
+                    <td><input type="number" name="DIGITALREGGIANINight" value="0"></td>
+                    <td><input type="number" name="DIGITALREGGIANITotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>REGGIANI SAMPLE</td>
+                    <td><input type="number" name="REGGIANISAMPLEDay" value="0"></td>
+                    <td><input type="number" name="REGGIANISAMPLENight" value="0"></td>
+                    <td><input type="number" name="REGGIANISAMPLETotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DIGITAL ATEX</td>
+                    <td><input type="number" name="DIGITALATEXDay" value="0"></td>
+                    <td><input type="number" name="DIGITALATEXNight" value="0"></td>
+                    <td><input type="number" name="DIGITALATEXTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>COATEXCO SAMPLE</td>
+                    <td><input type="number" name="COATEXCOSAMPLEDay" value="0"></td>
+                    <td><input type="number" name="COATEXCOSAMPLENight" value="0"></td>
+                    <td><input type="number" name="COATEXCOSAMPLETotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>EPSON(PRINT)-10</td>
+                    <td><input type="number" name="EPSON(PRINT)-10Day" value="0"></td>
+                    <td><input type="number" name="EPSON(PRINT)-10Night" value="0"></td>
+                    <td><input type="number" name="EPSON(PRINT)-10Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>EPSON-SAMPLE-10</td>
+                    <td><input type="number" name="EPSON-SAMPLE-10Day" value="0"></td>
+                    <td><input type="number" name="EPSON-SAMPLE-10Night" value="0"></td>
+                    <td><input type="number" name="EPSON-SAMPLE-10Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>EPSON(PRINT)-20</td>
+                    <td><input type="number" name="EPSON(PRINT)-20Day" value="0"></td>
+                    <td><input type="number" name="EPSON(PRINT)-20Night" value="0"></td>
+                    <td><input type="number" name="EPSON(PRINT)-20Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>EPSON-SAMPLE-20</td>
+                    <td><input type="number" name="EPSON-SAMPLE-20Day" value="0"></td>
+                    <td><input type="number" name="EPSON-SAMPLE-20Night" value="0"></td>
+                    <td><input type="number" name="EPSON-SAMPLE-20Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FEDAR(PRINT)</td>
+                    <td><input type="number" name="FEDAR(PRINT)Day" value="0"></td>
+                    <td><input type="number" name="FEDAR(PRINT)Night" value="0"></td>
+                    <td><input type="number" name="FEDAR(PRINT)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FEDAR-SAMPLE</td>
+                    <td><input type="number" name="FEDAR-SAMPLEDay" value="0"></td>
+                    <td><input type="number" name="FEDAR-SAMPLENight" value="0"></td>
+                    <td><input type="number" name="FEDAR-SAMPLETotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>HKM EPSON(PRINT)</td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Day" value="0"></td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Night" value="0"></td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Total" value="0" readonly></td>
+                </tr>
+                 <tr>
+                    <td>HKM EPSON(PRINT)</td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Day2" value="0"></td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Night2" value="0"></td>
+                    <td><input type="number" name="HKMEPSON(PRINT)Total2" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>HKM FEDAR(PRINT)</td>
+                    <td><input type="number" name="HKMFEDAR(PRINT)Day" value="0"></td>
+                    <td><input type="number" name="HKMFEDAR(PRINT)Night" value="0"></td>
+                    <td><input type="number" name="HKMFEDAR(PRINT)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>HKM DIGITAL ATEX</td>
+                    <td><input type="number" name="HKMDIGITALATEXDay" value="0"></td>
+                    <td><input type="number" name="HKMDIGITALATEXNight" value="0"></td>
+                    <td><input type="number" name="HKMDIGITALATEXTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>COJET DYEING -N</td>
+                    <td><input type="number" name="COJETDYEING-NDay" value="0"></td>
+                    <td><input type="number" name="COJETDYEING-NNight" value="0"></td>
+                    <td><input type="number" name="COJETDYEING-NTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>JET DYEING -U</td>
+                    <td><input type="number" name="JETDYEING-UDay" value="0"></td>
+                    <td><input type="number" name="JETDYEING-UNight" value="0"></td>
+                    <td><input type="number" name="JETDYEING-UTotal" value="0" readonly></td>
+                </tr>
+                 <tr>
+                    <td>JET DYEING -H</td>
+                    <td><input type="number" name="JETDYEING-HDay" value="0"></td>
+                    <td><input type="number" name="JETDYEING-HNight" value="0"></td>
+                    <td><input type="number" name="JETDYEING-HTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DRUM -N</td>
+                    <td><input type="number" name="DRUM-NDay" value="0"></td>
+                    <td><input type="number" name="DRUM-NNight" value="0"></td>
+                    <td><input type="number" name="DRUM-NTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DRUM -U</td>
+                    <td><input type="number" name="DRUM-UDay" value="0"></td>
+                    <td><input type="number" name="DRUM-UNight" value="0"></td>
+                    <td><input type="number" name="DRUM-UTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>DRUM -H</td>
+                    <td><input type="number" name="DRUM-HDay" value="0"></td>
+                    <td><input type="number" name="DRUM-HNight" value="0"></td>
+                    <td><input type="number" name="DRUM-HTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>SOFTLINA NM</td>
+                    <td><input type="number" name="SOFTLINANMDay" value="0"></td>
+                    <td><input type="number" name="SOFTLINANMNight" value="0"></td>
+                    <td><input type="number" name="SOFTLINANMTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>SOFTLINA UM</td>
+                    <td><input type="number" name="SOFTLINAUMDay" value="0"></td>
+                    <td><input type="number" name="SOFTLINAUMNight" value="0"></td>
+                    <td><input type="number" name="SOFTLINAUMTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>SOFTLINA HM</td>
+                    <td><input type="number" name="SOFTLINAHMDay" value="0"></td>
+                    <td><input type="number" name="SOFTLINAHMNight" value="0"></td>
+                    <td><input type="number" name="SOFTLINAHMTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WHITE FOLDING-40</td>
+                    <td><input type="number" name="WHITEFOLDING-40Day" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-40Night" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-40Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WHITE FOLDING-50</td>
+                    <td><input type="number" name="WHITEFOLDING-50Day" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-50Night" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-50Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WHITE FOLDING-60</td>
+                    <td><input type="number" name="WHITEFOLDING-60Day" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-60Night" value="0"></td>
+                    <td><input type="number" name="WHITEFOLDING-60Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FINISH FOLDING-10</td>
+                    <td><input type="number" name="FINISHFOLDING-10Day" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-10Night" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-10Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FINISH FOLDING-20</td>
+                    <td><input type="number" name="FINISHFOLDING-20Day" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-20Night" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-20Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FINISH FOLDING-30</td>
+                    <td><input type="number" name="FINISHFOLDING-30Day" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-30Night" value="0"></td>
+                    <td><input type="number" name="FINISHFOLDING-30Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WASHING -1-NM</td>
+                    <td><input type="number" name="WASHING-1-NMDay" value="0"></td>
+                    <td><input type="number" name="WASHING-1-NMNight" value="0"></td>
+                    <td><input type="number" name="WASHING-1-NMTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WASHING -1-HM</td>
+                    <td><input type="number" name="WASHING-1-HMDay" value="0"></td>
+                    <td><input type="number" name="WASHING-1-HMNight" value="0"></td>
+                    <td><input type="number" name="WASHING-1-HMTotal" value="0" readonly></td>
+                </tr>
+                 <tr>
+                    <td>WASHING -2-UM</td>
+                    <td><input type="number" name="WASHING-2-UMDay" value="0"></td>
+                    <td><input type="number" name="WASHING-2-UMNight" value="0"></td>
+                    <td><input type="number" name="WASHING-2-UMTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WASHING -2-UD</td>
+                    <td><input type="number" name="WASHING-2-UDDay" value="0"></td>
+                    <td><input type="number" name="WASHING-2-UDNight" value="0"></td>
+                    <td><input type="number" name="WASHING-2-UDTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>WASHING DIGITAL</td>
+                    <td><input type="number" name="WASHINGDIGITALDay" value="0"></td>
+                    <td><input type="number" name="WASHINGDIGITALNight" value="0"></td>
+                    <td><input type="number" name="WASHINGDIGITALTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>ZERO-ZERO NO 1</td>
+                    <td><input type="number" name="ZERO-ZERO NO 1Day" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 1Night" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 1Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>ZERO-ZERO NO 2</td>
+                    <td><input type="number" name="ZERO-ZERO NO 2Day" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 2Night" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 2Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>ZERO-ZERO NO 3</td>
+                    <td><input type="number" name="ZERO-ZERO NO 3Day" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 3Night" value="0"></td>
+                    <td><input type="number" name="ZERO-ZERO NO 3Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>PADDING (NM)</td>
+                    <td><input type="number" name="PADDING (NM)Day" value="0"></td>
+                    <td><input type="number" name="PADDING (NM)Night" value="0"></td>
+                    <td><input type="number" name="PADDING (NM)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>PADDING (UM)</td>
+                    <td><input type="number" name="PADDING (UM)Day" value="0"></td>
+                    <td><input type="number" name="PADDING (UM)Night" value="0"></td>
+                    <td><input type="number" name="PADDING (UM)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>PADDING (HM)</td>
+                    <td><input type="number" name="PADDING (HM)Day" value="0"></td>
+                    <td><input type="number" name="PADDING (HM)Night" value="0"></td>
+                    <td><input type="number" name="PADDING (HM)Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>BATCHING STENTER-1 Total</td>
+                    <td><input type="number" name="BATCHINGSTENTER-1TotalDay" value="0"></td>
+                    <td><input type="number" name="BATCHINGSTENTER-1TotalNight" value="0"></td>
+                    <td><input type="number" name="BATCHINGSTENTER-1Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>BATCHING STENTER-2 Total</td>
+                    <td><input type="number" name="BATCHINGSTENTER-2TotalDay" value="0"></td>
+                    <td><input type="number" name="BATCHINGSTENTER-2TotalNight" value="0"></td>
+                    <td><input type="number" name="BATCHINGSTENTER-2Total" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>FINISH PEN TOTAL</td>
+                    <td><input type="number" name="FINISHPENTOTALDay" value="0"></td>
+                    <td><input type="number" name="FINISHPENTOTALNight" value="0"></td>
+                    <td><input type="number" name="FINISHPENTOTALTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                     <td>WHITE PEN TOTAL</td>
+                    <td><input type="number" name="WHITEPENTOTALDay" value="0"></td>
+                    <td><input type="number" name="WHITEPENTOTALNight" value="0"></td>
+                    <td><input type="number" name="WHITEPENTOTALTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>BRASSO PRINT</td>
+                    <td><input type="number" name="BRASSOPRINTDay" value="0"></td>
+                    <td><input type="number" name="BRASSOPRINTNight" value="0"></td>
+                    <td><input type="number" name="BRASSOPRINTTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>IMPRESS.PROD Total</td>
+                    <td><input type="number" name="IMPRESS.PRODTotalDay" value="0"></td>
+                    <td><input type="number" name="IMPRESS.PRODTotalNight" value="0"></td>
+                    <td><input type="number" name="IMPRESS.PRODTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>H.K.M.BOLOMING DYE</td>
+                    <td><input type="number" name="HKMBOLOMINGDYEDay" value="0"></td>
+                    <td><input type="number" name="HKMBOLOMINGDYENight" value="0"></td>
+                    <td><input type="number" name="HKMBOLOMINGDYETotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>SBS.DYEING</td>
+                    <td><input type="number" name="SBS.DYEINGDay" value="0"></td>
+                    <td><input type="number" name="SBS.DYEINGNight" value="0"></td>
+                    <td><input type="number" name="SBS.DYEINGTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>UM.DYED</td>
+                    <td><input type="number" name="UM.DYEDDay" value="0"></td>
+                    <td><input type="number" name="UM.DYEDNight" value="0"></td>
+                    <td><input type="number" name="UM.DYEDTotal" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>RFDH.K.M.DYED</td>
+                    <td><input type="number" name="RFDHKMDYEDDay" value="0"></td>
+                    <td><input type="number" name="RFDHKMDYEDNight" value="0"></td>
+                    <td><input type="number" name="RFDHKMDYEDTotal" value="0" readonly></td>
+                </tr>
             </tbody>
         </table>
 
