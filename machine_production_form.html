@@ -437,119 +437,118 @@
     </div>
 
     <script>
-        // Auto-calculate totals when day or night values change
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add event listeners to all day and night inputs
-            const dayInputs = document.querySelectorAll('.day-input');
-            const nightInputs = document.querySelectorAll('.night-input');
-            
-            dayInputs.forEach(input => {
-                input.addEventListener('input', calculateTotal);
-            });
-            
-            nightInputs.forEach(input => {
-                input.addEventListener('input', calculateTotal);
-            });
-            
-            function calculateTotal(e) {
-                const row = e.target.closest('tr');
-                const dayInput = row.querySelector('.day-input');
-                const nightInput = row.querySelector('.night-input');
-                const totalInput = row.querySelector('.total-input');
-                
-                const dayValue = parseFloat(dayInput.value) || 0;
-                const nightValue = parseFloat(nightInput.value) || 0;
-                if(dayValue!=null && nightValue!==null){
-                totalInput.value = dayValue + nightValue;
-                }
-            }
-            
-            // Submit button handler
-            document.getElementById('submitBtn').addEventListener('click', submitForm);
+    // Auto-calculate totals when day or night values change
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add event listeners to all day and night inputs
+        const dayInputs = document.querySelectorAll('input[name$="Day"]');
+        const nightInputs = document.querySelectorAll('input[name$="Night"]');
+        
+        dayInputs.forEach(input => {
+            input.addEventListener('input', calculateTotal);
+            // Add class for easier selection later
+            input.classList.add('day-input');
         });
         
-        function submitForm() {
-            const date = document.getElementById('date').value;
-            const name = document.getElementById('name').value;
+        nightInputs.forEach(input => {
+            input.addEventListener('input', calculateTotal);
+            // Add class for easier selection later
+            input.classList.add('night-input');
+        });
+        
+        // Add class to all total inputs
+        document.querySelectorAll('input[name$="Total"]').forEach(input => {
+            input.classList.add('total-input');
+        });
+        
+        function calculateTotal(e) {
+            const row = e.target.closest('tr');
+            const dayInput = row.querySelector('input[name$="Day"]');
+            const nightInput = row.querySelector('input[name$="Night"]');
+            const totalInput = row.querySelector('input[name$="Total"]');
             
-            if (!date || !name) {
-                alert('Please fill in all required fields (Date and Name)');
-                return;
-            }
-            
-            // Collect all machine data
-            const machineData = [];
-            const rows = document.querySelectorAll('#machineTable tbody tr');
-            
-            rows.forEach(row => {
-                const machineName = row.cells[0].textContent.trim();
-                const dayInput = row.querySelector('.day-input');
-                const nightInput = row.querySelector('.night-input');
-                const totalInput = row.querySelector('.total-input');
-                
-                machineData.push({
-                    machineName: machineName,
-                    day: dayInput.value,
-                    night: nightInput.value,
-                    total: totalInput.value
-                });
-            });
-            
-            // Prepare the complete data object
-            const formData = {
-                date: date,
-                name: name,
-                machines: machineData
-            };
-            
-            // Here you would send the data to your backend or Google Sheets
-            // For now, we'll just log it and show a success message
-            console.log('Form data:', formData);
-            
-            // Call the function to save to Google Sheets
-            saveToGoogleSheets(formData);
+            const dayValue = parseFloat(dayInput.value) || 0;
+            const nightValue = parseFloat(nightInput.value) || 0;
+            totalInput.value = dayValue + nightValue;
         }
         
-        function saveToGoogleSheets(formData) {
-            const statusMessage = document.getElementById('statusMessage');
-            statusMessage.textContent = "Saving data...";
-            statusMessage.style.color = "blue";
-            
-            // Replace with your Google Apps Script Web App URL
-            const scriptUrl = "https://script.google.com/macros/s/AKfycbx4MG-qk-ioT_qPu4VAwOigbGNkTE25j8NXT8wnnp3vn7c4WoXcAmpyKb3jj_qaE2w8Mg/exec";
-            
-            fetch(scriptUrl, {
-                method: "POST",
-                mode: "no-cors",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(() => {
-                statusMessage.textContent = "Data saved successfully!";
-                statusMessage.style.color = "green";
-                // Optionally reset the form
-                document.getElementById('date').value = "";
-                document.getElementById('name').value = "";
-                
-                // Reset all input fields
-                const inputs = document.querySelectorAll('input[type="number"]');
-                inputs.forEach(input => {
-                    if (!input.readOnly) {
-                        input.value = "0";
-                    } else {
-                        // For total fields
-                        input.value = "0";
-                    }
-                });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                statusMessage.textContent = "Error saving data. Please try again.";
-                statusMessage.style.color = "red";
-            });
+        // Submit button handler
+        document.getElementById('submitBtn').addEventListener('click', submitForm);
+    });
+    
+    function submitForm() {
+        const date = document.getElementById('date').value;
+        const name = document.getElementById('name').value;
+        
+        if (!date || !name) {
+            alert('Please fill in all required fields (Date and Name)');
+            return;
         }
-    </script>
+        
+        // Collect all machine data
+        const machineData = [];
+        const rows = document.querySelectorAll('#machineTable tbody tr');
+        
+        rows.forEach(row => {
+            const machineName = row.cells[0].textContent.trim();
+            const dayInput = row.querySelector('input[name$="Day"]');
+            const nightInput = row.querySelector('input[name$="Night"]');
+            const totalInput = row.querySelector('input[name$="Total"]');
+            
+            machineData.push({
+                machineName: machineName,
+                day: dayInput ? dayInput.value : 0,
+                night: nightInput ? nightInput.value : 0,
+                total: totalInput ? totalInput.value : 0
+            });
+        });
+        
+        // Prepare the complete data object
+        const formData = {
+            date: date,
+            name: name,
+            machines: machineData
+        };
+        
+        console.log('Form data:', formData);
+        saveToGoogleSheets(formData);
+    }
+    
+    function saveToGoogleSheets(formData) {
+        const statusMessage = document.getElementById('statusMessage');
+        statusMessage.textContent = "Saving data...";
+        statusMessage.style.color = "blue";
+        
+        const scriptUrl = "https://script.google.com/macros/s/AKfycbx4MG-qk-ioT_qPu4VAwOigbGNkTE25j8NXT8wnnp3vn7c4WoXcAmpyKb3jj_qaE2w8Mg/exec";
+        
+        fetch(scriptUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(() => {
+            statusMessage.textContent = "Data saved successfully!";
+            statusMessage.style.color = "green";
+            document.getElementById('date').value = "";
+            document.getElementById('name').value = "";
+            
+            // Reset all input fields
+            document.querySelectorAll('input[type="number"]').forEach(input => {
+                if (!input.readOnly) {
+                    input.value = "";
+                } else {
+                    input.value = "0";
+                }
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            statusMessage.textContent = "Error saving data. Please try again.";
+            statusMessage.style.color = "red";
+        });
+    }
+</script>
 </body>
 </html>
