@@ -75,8 +75,8 @@
             <thead>
                 <tr>
                     <th>Machine Name</th>
-                    <th>Day Number</th>
-                    <th>Night Number</th>
+                    <th>Day Shift</th>
+                    <th>Night Shift</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -459,8 +459,9 @@
                 
                 const dayValue = parseFloat(dayInput.value) || 0;
                 const nightValue = parseFloat(nightInput.value) || 0;
-                
+                if(dayValue!=null && nightValue!==null){
                 totalInput.value = dayValue + nightValue;
+                }
             }
             
             // Submit button handler
